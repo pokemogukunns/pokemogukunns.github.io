@@ -184,6 +184,7 @@ app.mount("/word", StaticFiles(directory="./pokemogukunns", html=True), name="st
 app.mount("/words", StaticFiles(directory="./pokemogukunn", html=True), name="static")
 app.mount("/category", StaticFiles(directory="./category", html=True), name="static")
 app.mount("/go", StaticFiles(directory="./go", html=True), name="static")
+app.mount("/pass", StaticFiles(directory="./pass", html=True), name="static")
 app.add_middleware(GZipMiddleware, minimum_size=1000)
 
 from fastapi.templating import Jinja2Templates
@@ -217,7 +218,7 @@ def home(response: Response,request: Request,yuki: Union[str] = Cookie(None)):
         response.set_cookie("yuki","True",max_age=60 * 60 * 24 * 7)
         return template("home.html",{"request": request})
     print(check_cokie(yuki))
-    return redirect("/word")
+    return redirect("/words")
 
 @app.get('/watch', response_class=HTMLResponse)
 def video(v:str,response: Response,request: Request,yuki: Union[str] = Cookie(None),proxy: Union[str] = Cookie(None)):
