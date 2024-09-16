@@ -192,8 +192,6 @@ app.add_middleware(GZipMiddleware, minimum_size=1000)
 from fastapi.templating import Jinja2Templates
 template = Jinja2Templates(directory='templates').TemplateResponse
 
-from flask import Flask, render_template
-
 
 
 @app.get("/", response_class=HTMLResponse)
