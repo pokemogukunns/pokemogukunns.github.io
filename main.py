@@ -181,6 +181,7 @@ from typing import Union
 app = FastAPI(docs_url=None, redoc_url=None, openapi_url=None)
 app.mount("/css", StaticFiles(directory="./css"), name="static")
 app.mount("/word", StaticFiles(directory="./pokemogukunns", html=True), name="static")
+app.mount("/words", StaticFiles(directory="./pokemogukunn", html=True), name="static")
 app.mount("/category", StaticFiles(directory="./category", html=True), name="static")
 app.mount("/go", StaticFiles(directory="./go", html=True), name="static")
 app.add_middleware(GZipMiddleware, minimum_size=1000)
@@ -188,6 +189,23 @@ app.add_middleware(GZipMiddleware, minimum_size=1000)
 from fastapi.templating import Jinja2Templates
 template = Jinja2Templates(directory='templates').TemplateResponse
 
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+
+# プライバシーポリシーページを表示
+@app.route('/privacy')
+def privacy():
+    return render_template('privacy.html')
+
+# お問い合わせページを表示
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
 
 
 
