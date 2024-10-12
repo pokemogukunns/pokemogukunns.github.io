@@ -16,7 +16,7 @@
   <body>
     <div class="container-lg px-3 my-5 markdown-body">
       <h1><a href="https://pokemogukunns.github.io/">pokemogukunns</a></h1>
-<h3 id="suika">/suika<a class="anchorjs-link " href="/suika" aria-label="Anchor" data-anchorjs-icon="" style="font-style: normal; font-variant-caps: normal; font-weight: normal; font-stretch: normal; font-size: 1em; line-height: 1; font-family: anchorjs-icons; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-variant-emoji: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; padding-left: 0.375em;"></a>
+<h3 id="suika">/suika<a class="anchorjs-link " href="/suika" aria-label="Anchor" data-anchorjs-icon="🔗" ></a>
 </h3>
 <p><strong>ここへアクセスしてください。</strong></p>
     </div>
