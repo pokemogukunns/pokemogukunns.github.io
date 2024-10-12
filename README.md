@@ -14,8 +14,6 @@
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
 <meta property="twitter:title" content="/suika">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","headline":"/suika","name":"pokemogukunns","url":"https://pokemogukunns.github.io/"}</script>
     <style class="anchorjs"></style>
     <link rel="stylesheet" href="/assets/css/style.css?v=2a66d85a561306639835b23eda5d8437fd842f93">
   </head>
