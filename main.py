@@ -189,6 +189,7 @@ app.mount("/pass", StaticFiles(directory="./pass", html=True), name="static")
 app.mount("/contact", StaticFiles(directory="./contact", html=True), name="static")
 app.mount("/suika", StaticFiles(directory="./suika", html=True), name="static")
 app.mount("/", StaticFiles(directory="./tp", html=True), name="static")
+app.mount("/dmca", StaticFiles(directory="./dmca", html=True), name="static")
 app.add_middleware(GZipMiddleware, minimum_size=1000)
 
 from fastapi.templating import Jinja2Templates
