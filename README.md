@@ -2,9 +2,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
- 
-<!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>/suika | pokemogukunns</title>
 <meta name="generator" content="Jekyll v3.10.0">
 <meta property="og:title" content="/suika">
 <meta property="og:locale" content="en_US">
