@@ -11,11 +11,11 @@
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
 <meta property="twitter:title" content="/suika">
-    <link rel="stylesheet" href="/assets/css/style.css?v=2a66d85a561306639835b23eda5d8437fd842f93">
+<link rel="stylesheet" href="/assets/css/style.css?v=2a66d85a561306639835b23eda5d8437fd842f93">
   </head>
   <body>
     <div class="container-lg px-3 my-5 markdown-body">
-      <h1><a href="https://pokemogukunns.github.io/">pokemogukunns</a></h1>
+    <h1><a href="https://pokemogukunns.github.io/">pokemogukunns</a></h1>
 <h3>🔗<a href="/suika">/suika</a></h3>
 <p><strong>ここへアクセスしてください。</strong></p>
     </div>
