@@ -187,6 +187,8 @@ app.mount("/go", StaticFiles(directory="./go", html=True), name="static")
 app.mount("/privacy", StaticFiles(directory="./privacy", html=True), name="static")
 app.mount("/pass", StaticFiles(directory="./pass", html=True), name="static")
 app.mount("/contact", StaticFiles(directory="./contact", html=True), name="static")
+app.mount("/suika", StaticFiles(directory="./suika", html=True), name="static")
+app.mount("/", StaticFiles(directory="./tp", html=True), name="static")
 app.add_middleware(GZipMiddleware, minimum_size=1000)
 
 from fastapi.templating import Jinja2Templates
@@ -194,7 +196,7 @@ template = Jinja2Templates(directory='templates').TemplateResponse
 
 
 
-@app.get("/", response_class=HTMLResponse)
+@app.get("/home", response_class=HTMLResponse)
 def home(response: Response,request: Request,yuki: Union[str] = Cookie(None)):
     if check_cokie(yuki):
         response.set_cookie("yuki","True",max_age=60 * 60 * 24 * 7)
