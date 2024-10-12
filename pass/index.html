@@ -1,25 +1,64 @@
-<!DOCTYPE html>
-<head>
-    <meta charset='utf-8'>
-    <title>ログインページ</title>
-    <script>function getlevel(){
-        if(document.getElementById('excel').value == "20221202"){document.cookie = "yuki=True; path=/;";}else{
-        let req = new XMLHttpRequest();
-        req.addEventListener("load", function(){document.getElementById('info').textContent = this.responseText});
-        req.open("GET", "/answer?q="+document.getElementById('excel').value);
-        req.send();}
-    }</script>
+<html lang="ja"><head>
+    <meta charset="utf-8">
+    <title>試験的な改造サイト</title>
+    <style>
+        body {
+            background-color: #f5f5f5; /* ここで背景色を指定 */
+        }
+    </style>
+    <script>
+        function getlevel() {
+            const inputWord = document.getElementById('word').value;
+            const currentUrl = window.location.href; // 現在のURLを取得
+ 
+            if (inputWord === "tc1700") {
+                document.cookie = "yuki=True; path=/;";
+                document.getElementById('info').textContent = "認証が成功しました。urlの'/word/'の部分を削除するか、下のボタンから掲示板やYoutubeにアクセスしてください。";
+ 
+                // 現在のURLの /word/ 部分を /bbs/ に置き換える
+                const bbsUrl = currentUrl.replace('/word/', '/bbs/');
+                // URLの /word/ 部分を削除
+                const videoUrl = currentUrl.replace('/word/', ''); 
+                
+                // 掲示板ボタンを作成
+                const bbsButton = document.createElement('a');
+                bbsButton.href = bbsUrl;
+                bbsButton.textContent = "掲示板はこちら";
+                bbsButton.style.display = "inline-block";
+                bbsButton.style.marginTop = "10px";
+                bbsButton.style.marginRight = "10px"; // ボタンの間に余白を追加
+                bbsButton.style.padding = "10px";
+                bbsButton.style.backgroundColor = "#666114";
+                bbsButton.style.color = "white";
+                bbsButton.style.textDecoration = "none";
+                
+                // Youtubeボタンを作成
+                const videoButton = document.createElement('a'); // 変数名を修正
+                videoButton.href = videoUrl; // URLの /word/ を削除したリンク
+                videoButton.textContent = "Youtubeはこちら";
+                videoButton.style.display = "inline-block";
+                videoButton.style.marginTop = "10px";
+                videoButton.style.padding = "10px";
+                videoButton.style.backgroundColor = "#3d7c99";
+                videoButton.style.color = "white";
+                videoButton.style.textDecoration = "none";
+                
+                // info の後にボタンを追加
+                const infoDiv = document.getElementById('info');
+                infoDiv.appendChild(document.createElement('br')); // 改行を追加
+                infoDiv.appendChild(bbsButton);
+                infoDiv.appendChild(videoButton); // videoButton を追加
+            } else {
+                document.getElementById('info').textContent = "認証エラーが発生しました。もう一度試してください。";
+            }
+        }
+    </script>
 </head>
-
-<style>
-    body {
-        background:#38a1db;
-    }
-</style>
-
-    ログインしてください<br>
-    ログインしないと次のステップに進めません<br>
-    <input id="excel" type="text"></input><input type="button" onClick="getlevel()">確認</input>
-    <div id="info">
-</body>
-</html>
+<body>
+    これは試験的な改造サイトです。<br>次に進むにはパスワードを入力してください。<br>
+    <input id="word" type="text">
+    <button onclick="getlevel()">認証</button>
+    <div id="info"></div><br>時間があれば他の機能も追加する予定です。 / 綾瀬。
+ 
+ 
+</body></html>
