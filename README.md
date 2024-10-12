@@ -16,8 +16,7 @@
   <body>
     <div class="container-lg px-3 my-5 markdown-body">
       <h1><a href="https://pokemogukunns.github.io/">pokemogukunns</a></h1>
-<h3 id="suika">/suika<a class="anchorjs-link " href="/suika" aria-label="Anchor" data-anchorjs-icon="🔗" ></a>
-</h3>
+<h3>🔗<a href="/suika">/suika</a></h3>
 <p><strong>ここへアクセスしてください。</strong></p>
     </div>
     <!--
