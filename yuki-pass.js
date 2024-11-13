@@ -3,7 +3,7 @@
             const inputWord = document.getElementById('word').value;
             const currentUrl = window.location.href; // 現在のURLを取得
  
-            if (inputWord === "pokemogukunn") {
+            if (inputWord === "pokemogukunns") {
                 document.cookie = "yuki=True; path=/;";
                 document.getElementById('info').textContent = "認証が成功しました。urlの'/pass/'の部分を削除するか、下のボタンから掲示板やYoutubeにアクセスしてください。";
  
