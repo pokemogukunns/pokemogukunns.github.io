@@ -5,7 +5,7 @@
  
             if (inputWord === "pokemogukunns") {
                 document.cookie = "yuki=True; path=/;";
-                document.getElementById('info').textContent = "認証が成功しました。urlの'/pass/'の部分を削除するか、下のボタンから掲示板やYoutubeにアクセスしてください。";
+                document.getElementById('info').textContent = "認証が成功しました。urlの'/pass/'の部分を'/home/'に変更するか、下のボタンから掲示板やYoutubeにアクセスしてください。";
  
                 // 現在のURLの /word/ 部分を /bbs/ に置き換える
                 const bbsUrl = currentUrl.replace('/pass/', '/bbs/');
