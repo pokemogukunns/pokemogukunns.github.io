@@ -10,7 +10,7 @@
                 // 現在のURLの /word/ 部分を /bbs/ に置き換える
                 const bbsUrl = currentUrl.replace('/pass/', '/bbs/');
                 // URLの /word/ 部分を削除
-                const videoUrl = currentUrl.replace('/pass/', '/home/'); 
+                const videoUrl = currentUrl.replace('/pass/', '/'); 
                 
                 // 掲示板ボタンを作成
                 const bbsButton = document.createElement('a');
