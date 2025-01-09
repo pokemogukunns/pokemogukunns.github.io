@@ -13,14 +13,14 @@ summary::marker { display: none; }
 
 summary:before {
 	border-radius: 5px;
-	content: "[ + ]";
+	content: "[ 開く ]";
 	margin: -2px 10px 0 10px;
 	padding: 1px 0 3px 0;
 	text-align: center;
 	width: 40px;
 }
 
-details[open] > summary:before { content: "[ − ]"; }
+details[open] > summary:before { content: "[ 閉じる ]"; }
 
 
 #filters-box {
