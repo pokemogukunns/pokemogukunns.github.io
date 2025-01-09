@@ -1,0 +1,818 @@
+/*
+ * Common attributes
+ */
+
+html,
+body {
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
+}
+
+#contents {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: auto;
+}
+
+.h-box {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.v-box {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.deleted {
+  background-color: rgb(255, 0, 0, 0.5);
+}
+
+.underlined {
+  border-bottom: 1px solid;
+  margin-bottom: 20px;
+}
+
+.title {
+  margin: 0.5em 0 1em 0;
+}
+
+/* A flex container */
+.flexible {
+  display: flex;
+  align-items: center;
+}
+
+.flex-left {
+  display: flex;
+  flex: 1 1 auto;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+.flex-right {
+  display: flex;
+  flex: 2 0 auto;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+}
+
+
+/*
+ * Channel page
+ */
+
+.channel-profile > * {
+  font-size: 1.17em;
+  font-weight: bold;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+
+.channel-profile > img {
+  width: 48px;
+  height: auto;
+}
+
+body a.channel-owner {
+  background-color: #008bec;
+  color: #fff;
+  border-radius: 9px;
+  padding: 1px 6px;
+}
+
+.creator-heart-container {
+  display: inline-block;
+  padding: 0px 7px 6px 0px;
+  margin: 0px -7px -4px 0px;
+}
+
+.creator-heart {
+  display: inline-block;
+  position: relative;
+  width: 16px;
+  height: 16px;
+  border: 2px none;
+}
+
+.creator-heart-background-hearted {
+  width: 16px;
+  height: 16px;
+  padding: 0px;
+  position: relative;
+}
+
+.creator-heart-small-hearted {
+  position: absolute;
+  right: -7px;
+  bottom: -4px;
+}
+
+.creator-heart-small-container {
+  display: block;
+  position: relative;
+  width: 13px;
+  height: 13px;
+  color: rgb(255, 0, 0);
+}
+
+.feed-menu {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.feed-menu-item {
+  text-align: center;
+}
+
+@media screen and (max-width: 640px) {
+  .feed-menu-item {
+    flex: 0 0 40%;
+  }
+}
+
+div {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.loading {
+  display: inline-block;
+  animation: spin 2s linear infinite;
+}
+
+.playlist-restricted {
+  height: 20em;
+  padding-right: 10px;
+}
+
+
+/*
+ * Buttons
+ */
+
+body a.pure-button {
+  color: rgba(0,0,0,.8);
+}
+
+button.pure-button-primary,
+body a.pure-button-primary,
+.channel-owner:hover,
+.channel-owner:focus {
+  background-color: #a0a0a0;
+  color: rgba(35, 35, 35, 1);
+}
+
+.pure-button-primary,
+.pure-button-secondary {
+  border: 1px solid #a0a0a0;
+  border-radius: 3px;
+  margin: 0 .4em;
+}
+
+.pure-button-secondary.low-profile {
+  padding: 5px 10px;
+  margin: 0;
+}
+
+/* Has to be combined with flex-left/right */
+.button-container {
+  flex-flow: wrap;
+  gap: 0.5em 0.75em;
+}
+
+
+/*
+ * Video thumbnails
+ */
+
+div.thumbnail {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+img.thumbnail {
+  display: block; /* See: https://stackoverflow.com/a/11635197 */
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+}
+
+.thumbnail-placeholder {
+  min-height: 50px;
+  border: 2px dotted;
+}
+
+div.watched-overlay {
+  z-index: 50;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255,255,255,.4);
+}
+
+div.watched-indicator {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 100%;
+  background-color: red;
+}
+
+div.thumbnail > .top-left-overlay,
+div.thumbnail > .bottom-right-overlay {
+  z-index: 100;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+}
+
+.top-left-overlay { top: 0.6em; left: 0.6em; }
+.bottom-right-overlay { bottom: 0.6em; right: 0.6em; }
+
+.length {
+  padding: 1px;
+  margin: -2px 0;
+  color: #fff;
+  border-radius: 3px;
+}
+
+.length, .top-left-overlay button {
+  color: #eee;
+  background-color: rgba(35, 35, 35, 0.85) !important;
+}
+
+
+/*
+ * Navbar
+ */
+
+.navbar {
+  margin: 1em 0;
+  display: flex; /* this is also defined in framework, but in case of future changes */
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar > div {
+  flex: 1;
+}
+
+.searchbar {
+  flex-grow: 2; /* take double the space of the other items */
+}
+
+.navbar a {
+  padding: 0; /* this way it will stay aligned with content under */
+}
+
+.navbar .index-link {
+  font-weight: bold;
+  display: inline;
+}
+
+.searchbar .pure-form {
+  display: flex;
+}
+
+.searchbar .pure-form fieldset {
+  padding: 0;
+  flex: 1;
+}
+
+.searchbar input[type="search"] {
+	width: 100%;
+	margin: 1px;
+
+	border: 1px solid;
+	border-color: rgba(0,0,0,0);
+	border-bottom-color: #CCC;
+	border-radius: 0;
+
+	box-shadow: none;
+	appearance: none;
+	-webkit-appearance: none;
+}
+
+.searchbar input[type="search"]:focus {
+	margin: 0;
+	border: 2px solid;
+	border-color: rgba(0,0,0,0);
+	border-bottom-color: #FED;
+}
+
+/* https://stackoverflow.com/a/55170420 */
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  height: 14px;
+  width: 14px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAn0lEQVR42u3UMQrDMBBEUZ9WfQqDmm22EaTyjRMHAlM5K+Y7lb0wnUZPIKHlnutOa+25Z4D++MRBX98MD1V/trSppLKHqj9TTBWKcoUqffbUcbBBEhTjBOV4ja4l4OIAZThEOV6jHO8ARXD+gPPvKMABinGOrnu6gTNUawrcQKNCAQ7QeTxORzle3+sDfjJpPCqhJh7GixZq4rHcc9l5A9qZ+WeBhgEuAAAAAElFTkSuQmCC);
+  background-size: 14px;
+}
+
+.searchbar #searchbutton {
+  border: none;
+  background: none;
+  margin-top: 0;
+}
+
+.searchbar #searchbutton:hover {
+  color: rgb(0, 182, 240);
+}
+
+.user-field {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.user-field div {
+  width: auto;
+}
+
+.user-field div:not(:last-child) {
+  margin-right: 1em;
+}
+
+
+/*
+ * Responsive rules
+ */
+
+@media only screen and (max-aspect-ratio: 16/9) {
+  .player-dimensions.vjs-fluid {
+    padding-top: 46.86% !important;
+  }
+
+  #player-container {
+    padding-bottom: 46.86% !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .navbar > div {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+  }
+
+  .navbar > .searchbar > form {
+    width: 75%;
+  }
+
+  h1 {
+    font-size: 1.25em;
+    margin: 0.42em 0;
+  }
+
+  /* Space out the subscribe & RSS buttons and align them to the left */
+  .title.flexible { display: block; }
+  .title.flexible > .flex-right { margin: 0.75em 0; justify-content: flex-start; }
+
+  /* Space out buttons to make them easier to tap */
+  .user-field { font-size: 125%; }
+  .user-field > :not(:last-child) { margin-right: 1.75em; }
+
+  .icon-buttons { font-size: 125%; }
+  .icon-buttons > :not(:last-child) { margin-right: 0.75em; }
+}
+
+@media screen and (max-width: 320px) {
+  .navbar > .searchbar > form {
+    width: 100%;
+    margin: 0 1em;
+  }
+}
+
+
+/*
+ * Video "cards" (results/playlist/channel videos)
+ */
+
+.video-card-row { margin: 15px 0; }
+
+p.channel-name { margin: 0; }
+p.video-data   { margin: 0; font-weight: bold; font-size: 80%; }
+
+
+/*
+ * Comments & community posts
+ */
+
+.comments {
+  max-width: 800px;
+  margin: auto;
+}
+
+/*
+ * We don't want the top and bottom margin on the post page.
+ */
+.comments.post-comments {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.video-iframe-wrapper {
+  position: relative;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+
+.video-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+
+/*
+ * Page navigation
+ */
+
+.page-nav-container { margin: 15px 0 30px 0; }
+
+.page-prev-container { text-align: start; }
+.page-next-container { text-align: end; }
+
+.page-prev-container,
+.page-next-container {
+  display: inline-block;
+}
+
+
+/*
+ * Footer
+ */
+
+footer {
+  margin-top: auto;
+  padding: 1.5em 0;
+  text-align: center;
+  max-height: 30vh;
+}
+
+.light-theme footer {
+  color: #7c7c7c;
+}
+
+.dark-theme footer {
+  color: #adadad;
+}
+
+.light-theme footer a {
+  color: #7c7c7c !important;
+}
+
+.dark-theme footer a {
+  color: #adadad !important;
+}
+
+footer span {
+  margin: 4px 0;
+  display: block;
+}
+
+/* keyframes */
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+fieldset > select,
+span > select {
+  color: rgba(49, 49, 51, 1);
+}
+
+.pure-control-group label {
+  word-wrap: normal;
+}
+
+
+/*
+ * Light theme
+ */
+
+.light-theme a:hover,
+.light-theme a:active,
+.light-theme summary:hover,
+.light-theme a:focus,
+.light-theme summary:focus {
+  color: #075A9E !important;
+}
+
+.light-theme .pure-button-primary:hover,
+.light-theme .pure-button-primary:focus,
+.light-theme .pure-button-secondary:hover,
+.light-theme .pure-button-secondary:focus {
+  color: #fff !important;
+  border-color: rgba(0, 182, 240, 0.75) !important;
+  background-color: rgba(0, 182, 240, 0.75) !important;
+}
+
+.light-theme .pure-button-secondary:not(.low-profile) {
+  color: #335d7a;
+  background-color: #fff2;
+}
+
+.light-theme a {
+  color: #335d7a;
+  text-decoration: none;
+}
+
+/* All links that do not fit with the default color goes here */
+.light-theme a:not([data-id]) > .icon,
+.light-theme .pure-u-lg-1-5 > .h-box > a[href^="/watch?"],
+.light-theme .playlist-restricted > ol > li > a {
+  color: #303030;
+}
+
+.light-theme .pure-menu-heading {
+  color: #565d64;
+}
+
+@media (prefers-color-scheme: light) {
+  .no-theme a:hover,
+  .no-theme a:active,
+  .no-theme summary:hover,
+  .no-theme a:focus,
+  .no-theme summary:focus {
+    color: #075A9E !important;
+  }
+
+  .no-theme .pure-button-primary:hover,
+  .no-theme .pure-button-primary:focus,
+  .no-theme .pure-button-secondary:hover,
+  .no-theme .pure-button-secondary:focus {
+    color: #fff !important;
+    border-color: rgba(0, 182, 240, 0.75) !important;
+    background-color: rgba(0, 182, 240, 0.75) !important;
+  }
+
+  .no-theme .pure-button-secondary:not(.low-profile) {
+    color: #335d7a;
+    background-color: #fff2;
+  }
+
+  .no-theme a {
+    color: #335d7a;
+    text-decoration: none;
+  }
+
+  /* All links that do not fit with the default color goes here */
+  .no-theme a:not([data-id]) > .icon,
+  .no-theme .pure-u-lg-1-5 > .h-box > a[href^="/watch?"],
+  .no-theme .playlist-restricted > ol > li > a {
+    color: #303030;
+  }
+
+  .no-theme footer {
+    color: #7c7c7c;
+  }
+
+  .no-theme footer a {
+    color: #7c7c7c !important;
+  }
+
+  .light-theme .pure-menu-heading {
+    color: #565d64;
+  }
+}
+
+
+/*
+ * Dark theme
+ */
+
+.dark-theme a:hover,
+.dark-theme a:active,
+.dark-theme summary:hover,
+.dark-theme a:focus,
+.dark-theme summary:focus {
+  color: rgb(0, 182, 240);
+}
+
+.dark-theme .pure-button-primary:hover,
+.dark-theme .pure-button-primary:focus,
+.dark-theme .pure-button-secondary:hover,
+.dark-theme .pure-button-secondary:focus {
+  color: #fff !important;
+  border-color: rgb(0, 182, 240) !important;
+  background-color: rgba(0, 182, 240, 1) !important;
+}
+
+.dark-theme .pure-button-secondary {
+  background-color: #0002;
+  color: #ddd;
+}
+
+.dark-theme a {
+  color: #adadad;
+  text-decoration: none;
+}
+
+body.dark-theme {
+  background-color: rgba(35, 35, 35, 1);
+  color: #f0f0f0;
+}
+
+.dark-theme .pure-form legend {
+  color: #f0f0f0;
+}
+
+.dark-theme .pure-menu-heading {
+  color: #f0f0f0;
+}
+
+.dark-theme input,
+.dark-theme select,
+.dark-theme textarea {
+  color: rgba(35, 35, 35, 1);
+}
+
+.dark-theme .pure-form input[type="file"] {
+  color: #f0f0f0;
+}
+
+.dark-theme .searchbar input {
+  background-color: inherit;
+  color: inherit;
+}
+
+@media (prefers-color-scheme: dark) {
+  .no-theme a:hover,
+  .no-theme a:active,
+  .no-theme a:focus {
+    color: rgb(0, 182, 240);
+  }
+
+  .no-theme .pure-button-primary:hover,
+  .no-theme .pure-button-primary:focus,
+  .no-theme .pure-button-secondary:hover,
+  .no-theme .pure-button-secondary:focus {
+    color: #fff !important;
+    border-color: rgb(0, 182, 240) !important;
+    background-color: rgba(0, 182, 240, 1) !important;
+  }
+
+  .no-theme .pure-button-secondary {
+    background-color: #0002;
+    color: #ddd;
+  }
+
+  .no-theme a {
+    color: #adadad;
+    text-decoration: none;
+  }
+
+  body.no-theme {
+    background-color: rgba(35, 35, 35, 1);
+    color: #f0f0f0;
+  }
+
+  .no-theme .pure-form legend {
+    color: #f0f0f0;
+  }
+
+  .no-theme .pure-menu-heading {
+    color: #f0f0f0;
+  }
+
+  .no-theme input,
+  .no-theme select,
+  .no-theme textarea {
+    color: rgba(35, 35, 35, 1);
+  }
+
+  .no-theme .pure-form input[type="file"] {
+    color: #f0f0f0;
+  }
+
+  .no-theme .searchbar input {
+    background-color: inherit;
+    color: inherit;
+  }
+
+  .no-theme footer {
+    color: #adadad;
+  }
+
+  .no-theme footer a {
+    color: #adadad !important;
+  }
+}
+
+
+/*
+ * Miscellanous
+ */
+
+
+/*With commit d9528f5 all contents of the page is now within a flexbox. However,
+the hr element is rendered improperly within one.
+See https://stackoverflow.com/a/34372979 for more info */
+hr {
+  margin: 10px 0 10px 0;
+}
+
+/* Description Expansion Styling*/
+#descexpansionbutton,
+#music-desc-expansion {
+  display: none;
+}
+
+#descexpansionbutton ~ div {
+  overflow: hidden;
+}
+
+#descexpansionbutton:not(:checked) ~ div {
+  max-height: 8.3em;
+}
+
+#descexpansionbutton:checked ~ div {
+  overflow: unset;
+  height: 100%;
+}
+
+#descexpansionbutton ~ label {
+  order: 1;
+  margin-top: 20px;
+}
+
+label[for="descexpansionbutton"]:hover,
+label[for="music-desc-expansion"]:hover {
+  cursor: pointer;
+}
+
+/* Bidi (bidirectional text) support */
+h1, h2, h3, h4, h5, p,
+#descriptionWrapper,
+#description-box,
+#music-description-box {
+  unicode-bidi: plaintext;
+  text-align: start;
+}
+
+#descriptionWrapper {
+  max-width: 600px;
+  white-space: pre-wrap;
+}
+
+#music-description-box {
+  display: none;
+}
+
+#music-desc-expansion:checked ~ #music-description-box {
+  display: block;
+}
+
+#music-desc-expansion ~ label > h3 > .ion-ios-arrow-up,
+#music-desc-expansion:checked ~ label > h3 > .ion-ios-arrow-down {
+  display: none;
+}
+
+#music-desc-expansion:checked ~ label > h3 > .ion-ios-arrow-up,
+#music-desc-expansion ~ label > h3 > .ion-ios-arrow-down {
+  display: inline;
+}
+
+/* Select all the music items except the first one */
+.music-item + .music-item {
+  border-top: 1px solid #ffffff;
+}
+
+/* Center the "invidious" logo on the search page */
+#logo > h1 { text-align: center; }
+
+/* IE11 fixes */
+:-ms-input-placeholder { color: #888; }
+
+/* Wider settings name to less word wrap */
+.pure-form-aligned .pure-control-group label { width: 19em; }
+
+.channel-emoji {
+  margin: 0 2px;
+}
+
+#download_widget {
+    width: 100%;
+}
