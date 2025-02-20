@@ -12,14 +12,14 @@ const urlsToCache = [
   "/dmca",
   "image",
   "images",
-  "img,
+  "img",
   "js",
   "pokemogukunn",
   "pokemogukunns",
   "privacy",
-  "suika,
+  "suika",
   "tp",
-"jump.html"
+  "jump.html"
 ];
 
 // インストール時にキャッシュする
