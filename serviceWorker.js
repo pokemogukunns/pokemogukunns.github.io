@@ -2,7 +2,24 @@ const CACHE_NAME = "pwa-cache-v1";
 const urlsToCache = [
   "/",
   "/index.html",
-  "/file/index.html"
+  "/file",
+  "/go",
+  "/.github",
+  "/000image",
+  "/category",
+  "/contact",
+  "/css",
+  "/dmca",
+  "image",
+  "images",
+  "img,
+  "js",
+  "pokemogukunn",
+  "pokemogukunns",
+  "privacy",
+  "suika,
+  "tp",
+"jump.html"
 ];
 
 // インストール時にキャッシュする
