@@ -1,5 +1,13 @@
 <html lang="en" data-color-mode="auto" data-light-theme="light" data-dark-theme="dark" data-a11y-animated-images="system" data-a11y-link-underlines="true" data-turbo-loaded="">
   <head>
+     <link rel="manifest" href="manifest.json">
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("./serviceWorker.js")
+    .then(() => console.log("Service Worker registered"))
+    .catch((err) => console.log("Service Worker registration failed:", err));
+}
+</script>
     <style type="text/css">
   .turbo-progress-bar {
   position: fixed;
